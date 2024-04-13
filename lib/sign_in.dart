@@ -16,6 +16,8 @@ class _SignInState extends State<SignIn> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Align(
                 alignment: Alignment.topCenter,

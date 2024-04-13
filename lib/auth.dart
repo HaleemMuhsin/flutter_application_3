@@ -12,18 +12,20 @@ class _AuthUIState extends State<AuthUI> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Column(
+        child: Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(10.0), // Adjust the padding as needed
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        13.0), // Adjust the border radius as needed
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
                     child: Image.asset(
-                      'lib/assets/Auth.png', // Adjust the path to your image asset
+                      'lib/assets/Auth.png',
                     ),
                   ),
                 ),
@@ -93,6 +95,6 @@ class _AuthUIState extends State<AuthUI> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
