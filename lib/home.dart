@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/auth.dart';
+import 'package:flutter_application_3/edit.dart';
+import 'package:flutter_application_3/sign_in.dart';
 
 class HomeUI extends StatefulWidget {
   const HomeUI({Key? key}) : super(key: key);
@@ -8,7 +11,7 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  int _selectedIndex = 0; // Add this line to track the selected tab index
+  int _selectedIndex = 1; // Add this line to track the selected tab index
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +21,43 @@ class _HomeUIState extends State<HomeUI> {
           padding: const EdgeInsets.all(20.0),
           child: ClipRRect(
             borderRadius: BorderRadius.vertical(
-                top: Radius.circular(20.0),
-                bottom:
-                    Radius.circular(20.0) // Adjust the border radius as needed
-                ),
+              top: Radius.circular(20.0),
+              bottom:
+                  Radius.circular(20.0), // Adjust the border radius as needed
+            ),
             child: BottomNavigationBar(
               currentIndex: _selectedIndex,
               onTap: (int index) {
                 setState(() {
                   _selectedIndex = index;
                 });
+                // Add navigation logic here based on the selected index
+                switch (index) {
+                  case 0:
+                    // Navigate to Edit screen
+                    // Replace 'EditScreen()' with your desired destination widget
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EditUI()),
+                    );
+                    break;
+                  case 1:
+                    // Navigate to Home screen
+                    // Replace 'HomeScreen()' with your desired destination widget
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AuthUI()),
+                    );
+                    break;
+                  case 2:
+                    // Navigate to Profile screen
+                    // Replace 'ProfileScreen()' with your desired destination widget
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                    break;
+                }
               },
               items: [
                 BottomNavigationBarItem(
@@ -46,6 +76,49 @@ class _HomeUIState extends State<HomeUI> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+// Example destination screens
+class EditScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Edit'),
+      ),
+      body: Center(
+        child: Text('Edit Screen'),
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Center(
+        child: Text('Home Screen'),
+      ),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+      ),
+      body: Center(
+        child: Text('Profile Screen'),
       ),
     );
   }
