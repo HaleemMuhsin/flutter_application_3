@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/auth.dart';
 import 'package:flutter_application_3/edit.dart';
 import 'package:flutter_application_3/sign_in.dart';
 
@@ -46,7 +45,7 @@ class _HomeUIState extends State<HomeUI> {
                     // Replace 'HomeScreen()' with your desired destination widget
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AuthUI()),
+                      MaterialPageRoute(builder: (context) => HomeUI()),
                     );
                     break;
                   case 2:
@@ -76,49 +75,6 @@ class _HomeUIState extends State<HomeUI> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-// Example destination screens
-class EditScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Edit'),
-      ),
-      body: Center(
-        child: Text('Edit Screen'),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Center(
-        child: Text('Home Screen'),
-      ),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-      ),
-      body: Center(
-        child: Text('Profile Screen'),
       ),
     );
   }
