@@ -32,8 +32,19 @@ class _SignInState extends State<SignIn> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(
                       13.0), // Adjust the border radius as needed
-                  child: Image.asset(
-                    'lib/assets/SignIn.png', // Adjust the path to your image asset
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors
+                            .white, // Set the color of the border to white
+                        width: 2, // Set the width of the border
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(11), // Set the border radius
+                    ),
+                    child: Image.asset(
+                      'lib/assets/SignIn.png', // Adjust the path to your image asset
+                    ),
                   ),
                 ),
               ),
