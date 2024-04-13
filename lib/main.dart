@@ -10,6 +10,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: AuthUI());
+    return MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor:
+              Colors.black, // Set default background color of Scaffold to black
+        ),
+        home: AuthUI());
   }
 }
