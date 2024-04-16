@@ -9,7 +9,7 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  int _selectedIndex = 1; // Add this line to track the selected tab index
+  // Add this line to track the selected tab index
 
   @override
   Widget build(BuildContext context) {
